@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
 	box-sizing :border-box 
 }
 
+html{
+	font-family: 'Spartan', sans-serif;
+}
+
 
 
 `;
