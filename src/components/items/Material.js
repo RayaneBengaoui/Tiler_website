@@ -16,7 +16,13 @@ const StyledMaterial = styled.div`
   align-items: center;
   justify-content: space-evenly;
 
-  background-color: lightcoral;
+  h3 {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    font-weight: 700;
+    padding-bottom: 2rem;
+  }
 `;
 
 export default Material;
