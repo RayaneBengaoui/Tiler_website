@@ -37,6 +37,13 @@ const GlobalStyle = createGlobalStyle`
       color:  hsl(0, 0%, 63%);
       line-height: 1.5;
     }
+	
+	a {
+		text-decoration: none;
+		font-size: 1.5rem;
+		color: white;
+		padding: 0rem 2rem;
+	}
 
 
 

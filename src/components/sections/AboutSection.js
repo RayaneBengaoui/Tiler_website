@@ -26,7 +26,24 @@ const AboutSection = () => {
 
   return (
     <StyledAbout>
-      <TopLeftSection imgObj={currentBackground}></TopLeftSection>
+      <TopLeftSection imgObj={currentBackground}>
+        <div className="nav">
+          <div className="logo">Krasniqi Carrelage</div>
+          <div className="nav-links">
+            <ul>
+              <li>
+                <a href="">Matériaux</a>
+              </li>
+              <li>
+                <a href="">Réalisations</a>
+              </li>
+              <li>
+                <a href="">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </TopLeftSection>
       <TopRightSection>
         <h1>Artisan carreleur </h1>
         <p>
@@ -78,6 +95,27 @@ const TopLeftSection = styled.div`
   background-position: center;
   transition: all 1s ease;
   background-image: url("${(props) => props.imgObj}");
+
+  .nav {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 5rem;
+
+    .logo {
+      font-size: 3rem;
+      color: white;
+      padding: 0rem 2rem;
+      cursor: pointer;
+    }
+
+    ul {
+      display: flex;
+    }
+  }
 `;
 
 const TopRightSection = styled.div`
