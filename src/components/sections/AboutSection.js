@@ -73,6 +73,9 @@ const AboutSection = () => {
           professionnels qualifiés, dans le respect des Règles de l’Art. Nos
           réalisations sont les meilleures illustrations de notre expérience.
         </p>
+        <div className="materials_title">
+          <h1>Nos Matériaux</h1>
+        </div>
       </BottomMiddleSection>
       <BottomRightSection imgObj={filler_right}></BottomRightSection>
     </StyledAbout>
@@ -161,6 +164,7 @@ const BottomLeftSection = styled.div`
   background-position: center;
 `;
 const BottomMiddleSection = styled.div`
+  position: relative;
   grid-column: 4/8;
   grid-row: 3/4;
   background-color: white;
@@ -169,6 +173,24 @@ const BottomMiddleSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  .materials_title {
+    position: absolute;
+    width: 100%;
+    height: 10rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    left: 0;
+    bottom: -10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+
+    h1 {
+      padding-bottom: 0;
+      color: white;
+    }
+  }
 `;
 const BottomRightSection = styled.div`
   grid-column: 8/11;
