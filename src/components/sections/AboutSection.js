@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 //Images
@@ -11,9 +11,22 @@ import angle_left from "../../icons/icon-angle-left.svg";
 import angle_right from "../../icons/icon-angle-right.svg";
 
 const AboutSection = () => {
+  const [backgroundImages, setBackgroundImages] = useState([bg_2, bg_3, bg_1]);
+  const [currentBackground, setCurrentBackground] = useState(bg_2);
+
+  const ImageHandler = (direction) => {
+    let index = backgroundImages.indexOf(currentBackground);
+    if (direction === "left") {
+      index !== 0 ? index-- : (index = 2);
+    } else {
+      index !== 2 ? index++ : (index = 0);
+    }
+    setCurrentBackground(backgroundImages[index]);
+  };
+
   return (
     <StyledAbout>
-      <TopLeftSection imgObj={bg_2}></TopLeftSection>
+      <TopLeftSection imgObj={currentBackground}></TopLeftSection>
       <TopRightSection>
         <h1>Artisan carreleur </h1>
         <p>
@@ -25,11 +38,11 @@ const AboutSection = () => {
           rénovations en pose à la colle ou scellée ou sur plots (terrasses,
           balcons).
         </p>
-        <div class="btn-container">
-          <button class="left-btn">
+        <div className="btn-container">
+          <button className="left-btn" onClick={() => ImageHandler("left")}>
             <img src={angle_left} alt="left-icon" />
           </button>
-          <button class="right-btn">
+          <button className="right-btn" onClick={() => ImageHandler("right")}>
             <img src={angle_right} alt="right-icon" />
           </button>
         </div>
