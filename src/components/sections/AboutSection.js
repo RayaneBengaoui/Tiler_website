@@ -26,6 +26,11 @@ const AboutSection = () => {
 
   return (
     <StyledAbout>
+      <div className="preload">
+        <img src={bg_1} alt="preload" />
+        <img src={bg_2} alt="preload" />
+        <img src={bg_3} alt="preload" />
+      </div>
       <TopLeftSection imgObj={currentBackground}>
         <div className="nav">
           <div className="logo">Krasniqi Carrelage</div>
@@ -88,6 +93,11 @@ const StyledAbout = styled.div`
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(10, 1fr);
   position: relative;
+
+  .preload {
+    position: absolute;
+    left: -1000%;
+  }
 `;
 
 const TopLeftSection = styled.div`
