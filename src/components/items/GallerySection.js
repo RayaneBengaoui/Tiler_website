@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 
 const GallerySection = ({
   image,
@@ -19,6 +20,7 @@ const GallerySection = ({
   };
   return (
     <GallerySectionStyled
+      layoutId={title}
       onClick={galleryDetailsHandler}
       image={image}
       grid_row={grid_row}
@@ -27,7 +29,7 @@ const GallerySection = ({
   );
 };
 
-const GallerySectionStyled = styled.div`
+const GallerySectionStyled = styled(motion.div)`
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("${(props) => props.image}");

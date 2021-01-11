@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const GalleryDetails = ({
   workDetails,
@@ -19,20 +20,18 @@ const GalleryDetails = ({
     }
   };
   return (
-    <>
-      <CardShadow className="shadow" onClick={exitDetailHandler}>
-        <GalleryDetailsStyled>
-          <h1>{titleDetails}</h1>
-          {imagesDetails.map((image) => (
-            <img src={image} alt="gallery details"></img>
-          ))}
-        </GalleryDetailsStyled>
-      </CardShadow>
-    </>
+    <CardShadow className="shadow" onClick={exitDetailHandler}>
+      <GalleryDetailsStyled layoutId={titleDetails}>
+        <h1>{titleDetails}</h1>
+        {imagesDetails.map((image) => (
+          <img src={image} alt="gallery details"></img>
+        ))}
+      </GalleryDetailsStyled>
+    </CardShadow>
   );
 };
 
-const CardShadow = styled.div`
+const CardShadow = styled(motion.div)`
   width: 100%;
   min-height: 100vh;
   background: rgba(0, 0, 0, 0.5);
@@ -43,13 +42,14 @@ const CardShadow = styled.div`
   text-align: center;
 `;
 
-const GalleryDetailsStyled = styled.div`
+const GalleryDetailsStyled = styled(motion.div)`
   position: absolute;
   width: 80%;
   left: 10%;
   background-color: white;
   border-radius: 1rem;
   padding: 2rem 5rem;
+  z-index: 10;
 
   img {
     width: 100%;
