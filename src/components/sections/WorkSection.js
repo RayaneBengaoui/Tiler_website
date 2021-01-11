@@ -17,7 +17,17 @@ import details_int3 from "../../img/details_int_3.JPG";
 import details_int4 from "../../img/details_int_4.JPG";
 import details_int5 from "../../img/details_int_5.JPG";
 
-const WorkSection = ({ workDetails, setWorkDetails }) => {
+import details_travertin1 from "../../img/detail_travertin1.JPG";
+import details_travertin2 from "../../img/detail_travertin2.JPG";
+import details_travertin3 from "../../img/detail_travertin3.JPG";
+import details_travertin4 from "../../img/detail_travertin4.JPG";
+
+const WorkSection = ({
+  workDetails,
+  setWorkDetails,
+  setImagesDetails,
+  setTitleDetails,
+}) => {
   return (
     <StyledWork>
       <GallerySection
@@ -26,6 +36,16 @@ const WorkSection = ({ workDetails, setWorkDetails }) => {
         grid_row="1/2"
         workDetails={workDetails}
         setWorkDetails={setWorkDetails}
+        setImagesDetails={setImagesDetails}
+        images={[
+          details_int1,
+          details_int2,
+          details_int3,
+          details_int4,
+          details_int5,
+        ]}
+        title="Carrelage Intérieur"
+        setTitleDetails={setTitleDetails}
       />
       <GallerySection
         image={gallery_travertin}
@@ -33,6 +53,7 @@ const WorkSection = ({ workDetails, setWorkDetails }) => {
         grid_row="2/3"
         workDetails={workDetails}
         setWorkDetails={setWorkDetails}
+        setTitleDetails={setTitleDetails}
       />
       <GallerySection
         image={gallery_terasse_ext}
@@ -40,6 +61,7 @@ const WorkSection = ({ workDetails, setWorkDetails }) => {
         grid_row="1/3"
         workDetails={workDetails}
         setWorkDetails={setWorkDetails}
+        setTitleDetails={setTitleDetails}
       />
       <GallerySection
         image={gallery_sdb}
@@ -47,6 +69,7 @@ const WorkSection = ({ workDetails, setWorkDetails }) => {
         grid_row="1/2"
         workDetails={workDetails}
         setWorkDetails={setWorkDetails}
+        setTitleDetails={setTitleDetails}
       />
       <GallerySection
         image={gallery_sauna}
@@ -54,6 +77,7 @@ const WorkSection = ({ workDetails, setWorkDetails }) => {
         grid_row="1/2"
         workDetails={workDetails}
         setWorkDetails={setWorkDetails}
+        setTitleDetails={setTitleDetails}
       />
       <GallerySection
         image={gallery_couvertine}
@@ -61,6 +85,7 @@ const WorkSection = ({ workDetails, setWorkDetails }) => {
         grid_row="2/3"
         workDetails={workDetails}
         setWorkDetails={setWorkDetails}
+        setTitleDetails={setTitleDetails}
       />
     </StyledWork>
   );
