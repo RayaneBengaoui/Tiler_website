@@ -53,7 +53,7 @@ const GalleryDetailsStyled = styled.div`
 
   img {
     width: 100%;
-
+    height: 100rem;
     object-fit: cover;
   }
 `;

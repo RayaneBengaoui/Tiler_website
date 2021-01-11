@@ -22,6 +22,28 @@ import details_travertin2 from "../../img/detail_travertin2.JPG";
 import details_travertin3 from "../../img/detail_travertin3.JPG";
 import details_travertin4 from "../../img/detail_travertin4.JPG";
 
+import details_ext1 from "../../img/details_ext1.JPG";
+import details_ext2 from "../../img/details_ext2.JPG";
+import details_ext3 from "../../img/details_ext3.JPG";
+import details_ext4 from "../../img/details_ext4.JPG";
+import details_ext5 from "../../img/details_ext5.JPG";
+import details_ext6 from "../../img/details_ext6.JPG";
+
+import details_sdb1 from "../../img/details_sdb1.JPG";
+import details_sdb2 from "../../img/details_sdb2.JPG";
+import details_sdb3 from "../../img/details_sdb3.JPG";
+import details_sdb4 from "../../img/details_sdb4.JPG";
+
+import details_couvertine1 from "../../img/details_couvertine1.JPG";
+import details_couvertine2 from "../../img/details_couvertine2.JPG";
+import details_couvertine3 from "../../img/details_couvertine3.JPG";
+import details_couvertine4 from "../../img/details_couvertine4.JPG";
+
+import details_sauna1 from "../../img/details_sauna1.JPG";
+import details_sauna2 from "../../img/details_sauna2.JPG";
+import details_sauna3 from "../../img/details_sauna3.JPG";
+import details_sauna4 from "../../img/details_sauna4.JPG";
+
 const WorkSection = ({
   workDetails,
   setWorkDetails,
@@ -53,6 +75,14 @@ const WorkSection = ({
         grid_row="2/3"
         workDetails={workDetails}
         setWorkDetails={setWorkDetails}
+        setImagesDetails={setImagesDetails}
+        images={[
+          details_travertin1,
+          details_travertin2,
+          details_travertin3,
+          details_travertin4,
+        ]}
+        title="Travertins"
         setTitleDetails={setTitleDetails}
       />
       <GallerySection
@@ -61,6 +91,16 @@ const WorkSection = ({
         grid_row="1/3"
         workDetails={workDetails}
         setWorkDetails={setWorkDetails}
+        setImagesDetails={setImagesDetails}
+        images={[
+          details_ext1,
+          details_ext2,
+          details_ext3,
+          details_ext4,
+          details_ext5,
+          details_ext6,
+        ]}
+        title="Terrasses Exterieurs"
         setTitleDetails={setTitleDetails}
       />
       <GallerySection
@@ -69,6 +109,9 @@ const WorkSection = ({
         grid_row="1/2"
         workDetails={workDetails}
         setWorkDetails={setWorkDetails}
+        setImagesDetails={setImagesDetails}
+        images={[details_sdb1, details_sdb2, details_sdb3, details_sdb4]}
+        title="Salles de bains"
         setTitleDetails={setTitleDetails}
       />
       <GallerySection
@@ -77,6 +120,14 @@ const WorkSection = ({
         grid_row="1/2"
         workDetails={workDetails}
         setWorkDetails={setWorkDetails}
+        setImagesDetails={setImagesDetails}
+        images={[
+          details_sauna1,
+          details_sauna2,
+          details_sauna3,
+          details_sauna4,
+        ]}
+        title="Jaccusi/Sauna"
         setTitleDetails={setTitleDetails}
       />
       <GallerySection
@@ -85,6 +136,14 @@ const WorkSection = ({
         grid_row="2/3"
         workDetails={workDetails}
         setWorkDetails={setWorkDetails}
+        setImagesDetails={setImagesDetails}
+        images={[
+          details_couvertine1,
+          details_couvertine2,
+          details_couvertine3,
+          details_couvertine4,
+        ]}
+        title="Couvertines"
         setTitleDetails={setTitleDetails}
       />
     </StyledWork>
