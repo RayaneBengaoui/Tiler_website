@@ -45,6 +45,15 @@ const GlobalStyle = createGlobalStyle`
 		padding: 0rem 2rem;
 	}
 
+	form{
+		input{
+			outline:none;
+			background:none;
+			border : none;
+			font-family : inherit;
+		}
+	}
+
 
 
 `;

@@ -5,12 +5,52 @@ import footer_position from "../../icons/footer_position.svg";
 import footer_phone from "../../icons/footer_phone.svg";
 import footer_mail from "../../icons/footer_mail.svg";
 
+import contact_perso from "../../icons/contact_perso.svg";
+import contact_mail from "../../icons/contact_mail.svg";
+import contact_phone from "../../icons/contact_phone.svg";
+
 const ContactSection = () => {
   return (
     <StyledContact>
       <Form>
         <h1>Nous Contacter</h1>
-        <form action=""></form>
+        <form action="">
+          <div className="informations">
+            <div className="contact_section">
+              <div className="contact_section__input">
+                <img src={contact_perso} alt="profil" />
+                <input
+                  type="text"
+                  id="name"
+                  name="user_name"
+                  placeholder="Nom"
+                />
+              </div>
+              <div className="contact_section__input">
+                <img src={contact_mail} alt="mail" />
+                <input
+                  type="email"
+                  id="mail"
+                  name="user_mail"
+                  placeholder="Email"
+                />
+              </div>
+              <div className="contact_section__input">
+                <img src={contact_phone} alt="phone" />
+                <input
+                  id="telNo"
+                  name="telNo"
+                  type="tel"
+                  placeholder="Téléphone"
+                />
+              </div>
+            </div>
+            <div className="message_section">
+              <textarea id="msg" name="user_message"></textarea>
+            </div>
+          </div>
+          <button>Envoyer</button>
+        </form>
       </Form>
       <Footer>
         <div className="contacts">
@@ -44,15 +84,57 @@ const StyledContact = styled.div`
 const Form = styled.div`
   min-height: 90vh;
   padding-top: 5rem;
+
   h1 {
     text-align: center;
     padding-bottom: 5rem;
+  }
+
+  button {
+    align-self: center;
   }
   form {
     width: 100rem;
     height: 60rem;
     border-radius: 5rem;
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .informations {
+    height: 80%;
+    display: flex;
+
+    .contact_section {
+      width: 50%;
+      padding: 0rem 5rem;
+      background-color: lightblue;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      &__input {
+        border: 2px solid #8b8b8b;
+        border-radius: 1.5rem;
+        padding: 0.5rem 0rem;
+        display: flex;
+        justify-content: space-around;
+        img {
+          filter: grayscale(100%);
+          /* filter: invert(1) sepia(1) saturate(5) hue-rotate(175deg); */
+        }
+        input {
+          width: 70%;
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .message_section {
+      width: 50%;
+      background-color: lightcoral;
+    }
   }
 `;
 
