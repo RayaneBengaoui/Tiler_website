@@ -10,7 +10,7 @@ import filler_right from "../../img/filler-right.png";
 import angle_left from "../../icons/icon-angle-left.svg";
 import angle_right from "../../icons/icon-angle-right.svg";
 
-const AboutSection = () => {
+const AboutSection = ({ materialsRef, workRef, contactRef }) => {
   const [backgroundImages, setBackgroundImages] = useState([bg_2, bg_3, bg_1]);
   const [currentBackground, setCurrentBackground] = useState(bg_2);
 
@@ -23,6 +23,12 @@ const AboutSection = () => {
     }
     setCurrentBackground(backgroundImages[index]);
   };
+
+  const handleClick = (ref) =>
+    ref.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
 
   return (
     <StyledAbout>
@@ -37,13 +43,13 @@ const AboutSection = () => {
           <div className="nav-links">
             <ul>
               <li>
-                <a href="">Matériaux</a>
+                <a onClick={() => handleClick(materialsRef)}>Matériaux</a>
               </li>
               <li>
-                <a href="">Réalisations</a>
+                <a onClick={() => handleClick(workRef)}>Réalisations</a>
               </li>
               <li>
-                <a href="">Contact</a>
+                <a onClick={() => handleClick(contactRef)}>Contact</a>
               </li>
             </ul>
           </div>
@@ -127,6 +133,10 @@ const TopLeftSection = styled.div`
 
     ul {
       display: flex;
+
+      li {
+        cursor: pointer;
+      }
     }
   }
 `;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 //Styled Components
 import styled from "styled-components";
 //Framer Motion
@@ -51,9 +51,10 @@ const WorkSection = ({
   setWorkDetails,
   setImagesDetails,
   setTitleDetails,
+  workRef,
 }) => {
   return (
-    <StyledWork>
+    <StyledWork ref={workRef}>
       <GallerySection
         image={gallery_carrelage_int}
         grid_column="1/4"

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import styled from "styled-components";
 
@@ -15,10 +15,19 @@ const Home = () => {
   const [workDetails, setWorkDetails] = useState(false);
   const [imagesDetails, setImagesDetails] = useState([]);
   const [titleDetails, setTitleDetails] = useState("");
+
+  const materialsRef = useRef(null);
+  const workRef = useRef(null);
+  const contactRef = useRef(null);
+
   return (
     <HomeStyled>
-      <AboutSection />
-      <MaterialsSection />
+      <AboutSection
+        materialsRef={materialsRef}
+        workRef={workRef}
+        contactRef={contactRef}
+      />
+      <MaterialsSection materialsRef={materialsRef} />
       <AnimateSharedLayout type="crossfade">
         <AnimatePresence>
           {workDetails && (
@@ -37,8 +46,9 @@ const Home = () => {
           setWorkDetails={setWorkDetails}
           setImagesDetails={setImagesDetails}
           setTitleDetails={setTitleDetails}
+          workRef={workRef}
         />
-        <ContactSection />
+        <ContactSection contactRef={contactRef} />
       </AnimateSharedLayout>
     </HomeStyled>
   );

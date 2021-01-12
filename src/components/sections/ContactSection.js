@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 
 import footer_position from "../../icons/footer_position.svg";
@@ -9,9 +9,9 @@ import contact_perso from "../../icons/contact_perso.svg";
 import contact_mail from "../../icons/contact_mail.svg";
 import contact_phone from "../../icons/contact_phone.svg";
 
-const ContactSection = () => {
+const ContactSection = ({ contactRef }) => {
   return (
-    <StyledContact>
+    <StyledContact ref={contactRef}>
       <Form>
         <h1>Nous Contacter</h1>
         <form action="">
@@ -106,6 +106,7 @@ const Form = styled.div`
     font-weight: bolder;
   }
   form {
+    position: relative;
     width: 100rem;
     height: 60rem;
     border-radius: 5rem;

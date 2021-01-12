@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 
 //Images
@@ -18,9 +18,9 @@ import travertin from "../../img/travertin.png";
 //Components
 import Material from "../items/Material";
 
-const MaterialsSection = () => {
+const MaterialsSection = ({ materialsRef }) => {
   return (
-    <StyledMaterials>
+    <StyledMaterials ref={materialsRef}>
       <Materials>
         <Material image={ardoise} description="Ardoise" />
         <Material image={ciment} description="Carreaux de ciment" />
