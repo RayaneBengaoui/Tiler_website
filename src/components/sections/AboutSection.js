@@ -13,6 +13,24 @@ import angle_right from "../../icons/icon-angle-right.svg";
 const AboutSection = ({ materialsRef, workRef, contactRef }) => {
   const [backgroundImages, setBackgroundImages] = useState([bg_2, bg_3, bg_1]);
   const [currentBackground, setCurrentBackground] = useState(bg_2);
+  const [texts, setTexts] = useState([
+    {
+      title: "expertise",
+      description:
+        "Faire appel à notre compétence professionnelle, c’est d’abord s’assurer un travail soigné, de qualité, réalisé par des professionnels qualifiés, dans le respect des Règles de l’Art. Nos réalisations  sont   les meilleures illustrations de notre expérience.",
+    },
+    {
+      title: "professionnalisme",
+      description:
+        "Nos réalisations  sont   les meilleures illustrations de notre expérience. Nous saurons vous accompagner dans vos travaux, de la définition de votre projet, à sa réalisation ainsi que ",
+    },
+    {
+      title: "Garantie Décennale",
+      description:
+        "Nous nous engageons à une parfaite exécution de vos travaux, soignée, dans le respect des normes et des délais. Tous nos travaux sont assurés par notre Garantie Décennale. Parallèlement, l’entreprise KRASNIQI, s’inscrit dans une démarche environnementale, ",
+    },
+  ]);
+  const [currentText, setCurrentText] = useState(texts[0]);
 
   const ImageHandler = (direction) => {
     let index = backgroundImages.indexOf(currentBackground);
@@ -22,6 +40,7 @@ const AboutSection = ({ materialsRef, workRef, contactRef }) => {
       index !== 2 ? index++ : (index = 0);
     }
     setCurrentBackground(backgroundImages[index]);
+    setCurrentText(texts[index]);
   };
 
   const handleClick = (ref) =>
@@ -77,13 +96,8 @@ const AboutSection = ({ materialsRef, workRef, contactRef }) => {
       </TopRightSection>
       <BottomLeftSection imgObj={filler_left}></BottomLeftSection>
       <BottomMiddleSection>
-        <h2>EXPERTISE</h2>
-        <p>
-          Faire appel à notre compétence professionnelle, c’est d’abord
-          s’assurer un travail soigné, de qualité, réalisé par des
-          professionnels qualifiés, dans le respect des Règles de l’Art. Nos
-          réalisations sont les meilleures illustrations de notre expérience.
-        </p>
+        <h2>{currentText.title}</h2>
+        <p>{currentText.description}</p>
         <div className="materials_title">
           <h1>Nos Matériaux</h1>
         </div>
