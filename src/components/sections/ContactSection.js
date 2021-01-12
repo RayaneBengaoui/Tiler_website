@@ -46,7 +46,11 @@ const ContactSection = () => {
               </div>
             </div>
             <div className="message_section">
-              <textarea id="msg" name="user_message"></textarea>
+              <textarea
+                id="msg"
+                name="user_message"
+                placeholder="Message"
+              ></textarea>
             </div>
           </div>
           <button>Envoyer</button>
@@ -92,6 +96,14 @@ const Form = styled.div`
 
   button {
     align-self: center;
+    width: 25rem;
+    height: 7rem;
+    background-color: #3c72cc;
+    color: white;
+    border-radius: 2rem;
+    font-family: inherit;
+    font-size: 2rem;
+    font-weight: bolder;
   }
   form {
     width: 100rem;
@@ -109,7 +121,7 @@ const Form = styled.div`
     .contact_section {
       width: 50%;
       padding: 0rem 5rem;
-      background-color: lightblue;
+
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
@@ -120,9 +132,13 @@ const Form = styled.div`
         padding: 0.5rem 0rem;
         display: flex;
         justify-content: space-around;
+
+        &:hover {
+          filter: invert(36%) sepia(29%) saturate(2311%) hue-rotate(190deg)
+            brightness(100%) contrast(83%);
+        }
         img {
           filter: grayscale(100%);
-          /* filter: invert(1) sepia(1) saturate(5) hue-rotate(175deg); */
         }
         input {
           width: 70%;
@@ -133,7 +149,17 @@ const Form = styled.div`
 
     .message_section {
       width: 50%;
-      background-color: lightcoral;
+
+      padding: 6rem 5rem 6rem 0rem;
+
+      textarea {
+        width: 100%;
+        height: 100%;
+        border-radius: 1.5rem;
+        border: 2px solid #8b8b8b;
+        font-size: 1.8rem;
+        padding: 2rem;
+      }
     }
   }
 `;

@@ -46,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
 	}
 
 	form{
-		input{
+		input,textarea{
 			outline:none;
 			background:none;
 			border : none;
