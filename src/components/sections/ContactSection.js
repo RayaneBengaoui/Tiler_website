@@ -163,6 +163,39 @@ const Form = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 1050px) {
+    form {
+      width: 60rem;
+      height: 60rem;
+    }
+
+    .informations {
+      .contact_section {
+        padding: 0rem 2rem;
+        &__input {
+          padding: 0.5rem 0rem;
+
+          img {
+            width: 4rem;
+          }
+          input {
+            width: 70%;
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      .message_section {
+        padding: 8rem 2rem 7.5rem 2rem;
+
+        textarea {
+          font-size: 1.5rem;
+          padding: 1.5rem;
+        }
+      }
+    }
+  }
 `;
 
 const Footer = styled.div`
@@ -193,6 +226,19 @@ const Footer = styled.div`
         color: white;
         font-size: 1.5rem;
         width: 50%;
+      }
+    }
+  }
+  @media screen and (max-width: 1050px) {
+    .contacts {
+      padding: 1rem 0rem;
+
+      .contact {
+        p {
+          color: white;
+          font-size: 1.2rem;
+          width: 50%;
+        }
       }
     }
   }

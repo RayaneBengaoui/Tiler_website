@@ -118,6 +118,11 @@ const StyledAbout = styled.div`
     position: absolute;
     left: -1000%;
   }
+
+  @media screen and (max-width: 1000px) {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const TopLeftSection = styled.div`
@@ -153,6 +158,11 @@ const TopLeftSection = styled.div`
       }
     }
   }
+
+  @media screen and (max-width: 1000px) {
+    grid-column: 1/3;
+    grid-row: 1;
+  }
 `;
 
 const TopRightSection = styled.div`
@@ -166,11 +176,24 @@ const TopRightSection = styled.div`
   align-items: center;
   justify-content: center;
 
+  @media screen and (max-width: 1000px) {
+    grid-column: 1;
+    grid-row: 2;
+
+    .btn-container {
+      top: -5rem;
+
+      bottom: initial;
+      left: 0rem;
+    }
+  }
+
   .btn-container {
     bottom: 0;
     width: 10vw;
     height: 5vw;
-    min-height: 3rem;
+    min-width: 10rem;
+    min-height: 5rem;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -196,6 +219,11 @@ const BottomLeftSection = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
+  @media screen and (max-width: 1000px) {
+    grid-column: 2;
+    grid-row: 2;
+  }
 `;
 const BottomMiddleSection = styled.div`
   position: relative;
@@ -207,6 +235,12 @@ const BottomMiddleSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+
+  @media screen and (max-width: 1000px) {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
   .materials_title {
     position: absolute;
     width: 100%;
@@ -233,6 +267,11 @@ const BottomRightSection = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
+  @media screen and (max-width: 1000px) {
+    grid-column: 1;
+    grid-row: 3;
+  }
 `;
 
 export default AboutSection;

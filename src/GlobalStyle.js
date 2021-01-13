@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
 	html{
 		font-family: 'Spartan', sans-serif;
 		font-size: 62.5%;
+		
 	}
 
 	button {

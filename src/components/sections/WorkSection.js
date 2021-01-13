@@ -1,10 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 //Styled Components
 import styled from "styled-components";
 //Framer Motion
 
 //Components
 import GallerySection from "../items/GallerySection";
+import useWindowDimensions from "../items/WindowDimension";
 //Images
 import gallery_carrelage_int from "../../img/gallery_carrelage_int.png";
 import gallery_travertin from "../../img/gallery_travertin.png";
@@ -53,12 +54,58 @@ const WorkSection = ({
   setTitleDetails,
   workRef,
 }) => {
+  const { width } = useWindowDimensions();
+  const [galleryDimensions, setGalleryDimensions] = useState([
+    { column: "1/4", row: "1/2" },
+    { column: "1/4", row: "2/3" },
+    { column: "4/8", row: "1/3" },
+    { column: "8/10", row: "1/2" },
+    { column: "10/13", row: "1/2" },
+    { column: "8/13", row: "2/3" },
+  ]);
+
+  useEffect(() => {
+    setGalleryDimensions(getGridDimensions);
+  }, [width]);
+
+  const getGridDimensions = () => {
+    if (width > 1000) {
+      return [
+        { column: "1/4", row: "1/2" },
+        { column: "1/4", row: "2/3" },
+        { column: "4/8", row: "1/3" },
+        { column: "8/10", row: "1/2" },
+        { column: "10/13", row: "1/2" },
+        { column: "8/13", row: "2/3" },
+      ];
+    } else {
+      if (width < 1000 && width > 650) {
+        return [
+          { column: "1/2", row: "1/3" },
+          { column: "1/2", row: "3/5" },
+          { column: "2/3", row: "1/5" },
+          { column: "1/2", row: "5/7" },
+          { column: "2/3", row: "5/7" },
+          { column: "1/3", row: "7/9" },
+        ];
+      } else {
+        return [
+          { column: "1/2", row: "1/3" },
+          { column: "1/2", row: "3/5" },
+          { column: "2/3", row: "1/5" },
+          { column: "1/2", row: "5/7" },
+          { column: "2/3", row: "5/7" },
+          { column: "1/3", row: "7/9" },
+        ];
+      }
+    }
+  };
   return (
     <StyledWork ref={workRef}>
       <GallerySection
         image={gallery_carrelage_int}
-        grid_column="1/4"
-        grid_row="1/2"
+        grid_column={galleryDimensions[0].column}
+        grid_row={galleryDimensions[0].row}
         workDetails={workDetails}
         setWorkDetails={setWorkDetails}
         setImagesDetails={setImagesDetails}
@@ -74,8 +121,8 @@ const WorkSection = ({
       />
       <GallerySection
         image={gallery_travertin}
-        grid_column="1/4"
-        grid_row="2/3"
+        grid_column={galleryDimensions[1].column}
+        grid_row={galleryDimensions[1].row}
         workDetails={workDetails}
         setWorkDetails={setWorkDetails}
         setImagesDetails={setImagesDetails}
@@ -90,8 +137,8 @@ const WorkSection = ({
       />
       <GallerySection
         image={gallery_terasse_ext}
-        grid_column="4/8"
-        grid_row="1/3"
+        grid_column={galleryDimensions[2].column}
+        grid_row={galleryDimensions[2].row}
         workDetails={workDetails}
         setWorkDetails={setWorkDetails}
         setImagesDetails={setImagesDetails}
@@ -108,8 +155,8 @@ const WorkSection = ({
       />
       <GallerySection
         image={gallery_sdb}
-        grid_column="8/10"
-        grid_row="1/2"
+        grid_column={galleryDimensions[3].column}
+        grid_row={galleryDimensions[3].row}
         workDetails={workDetails}
         setWorkDetails={setWorkDetails}
         setImagesDetails={setImagesDetails}
@@ -119,8 +166,8 @@ const WorkSection = ({
       />
       <GallerySection
         image={gallery_sauna}
-        grid_column="10/13"
-        grid_row="1/2"
+        grid_column={galleryDimensions[4].column}
+        grid_row={galleryDimensions[4].row}
         workDetails={workDetails}
         setWorkDetails={setWorkDetails}
         setImagesDetails={setImagesDetails}
@@ -135,8 +182,8 @@ const WorkSection = ({
       />
       <GallerySection
         image={gallery_couvertine}
-        grid_column="8/13"
-        grid_row="2/3"
+        grid_column={galleryDimensions[5].column}
+        grid_row={galleryDimensions[5].row}
         workDetails={workDetails}
         setWorkDetails={setWorkDetails}
         setImagesDetails={setImagesDetails}
@@ -158,6 +205,11 @@ const StyledWork = styled.div`
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(auto-fit, minmax(12, 160px));
+
+  @media screen and (max-width: 1000px) {
+    grid-template-rows: repeat(8, minmax(300px, auto));
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export default WorkSection;
