@@ -12,7 +12,7 @@ import contact_phone from "../../icons/contact_phone.svg";
 const ContactSection = ({ contactRef }) => {
   return (
     <StyledContact ref={contactRef}>
-      <Form>
+      {/* <Form>
         <h1>Nous Contacter</h1>
         <form action="">
           <div className="informations">
@@ -55,7 +55,7 @@ const ContactSection = ({ contactRef }) => {
           </div>
           <button>Envoyer</button>
         </form>
-      </Form>
+      </Form> */}
       <Footer>
         <div className="contacts">
           <div className="contact">
@@ -79,7 +79,7 @@ const ContactSection = ({ contactRef }) => {
 };
 
 const StyledContact = styled.div`
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
